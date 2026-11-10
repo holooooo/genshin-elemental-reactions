@@ -1,5 +1,5 @@
 {
- "duration": 131.939,
+ "duration": 140.526,
  "sampleRate": 44100,
  "target": {
   "I": -15,
@@ -64,9 +64,16 @@
   },
   {
    "type": "whoosh",
-   "scene": "outro",
+   "scene": "teaser",
    "line": 0,
    "t": 121.589,
+   "dur": 1.2
+  },
+  {
+   "type": "whoosh",
+   "scene": "outro",
+   "line": 0,
+   "t": 130.177,
    "dur": 1.2
   },
   {
@@ -644,31 +651,80 @@
    "dur": 13.02
   },
   {
+   "type": "whoosh",
+   "scene": "teaser",
+   "line": 0,
+   "t": 121.789,
+   "dur": 1.2
+  },
+  {
+   "type": "zap",
+   "scene": "teaser",
+   "line": 0,
+   "t": 122.139,
+   "dur": 0.7
+  },
+  {
+   "type": "zap",
+   "scene": "teaser",
+   "line": 0,
+   "t": 124.439,
+   "dur": 0.7
+  },
+  {
+   "type": "zap",
+   "scene": "teaser",
+   "line": 0,
+   "t": 125.039,
+   "dur": 0.7
+  },
+  {
+   "type": "zap",
+   "scene": "teaser",
+   "line": 0,
+   "t": 126.739,
+   "dur": 0.7
+  },
+  {
+   "type": "zap",
+   "scene": "teaser",
+   "line": 0,
+   "t": 129.039,
+   "dur": 0.7
+  },
+  {
+   "type": "thunder",
+   "scene": "teaser",
+   "line": 0,
+   "t": 124.389,
+   "dur": 4.8
+  },
+  {
    "type": "ui_tick",
    "scene": "outro",
    "line": 0,
-   "t": 123.339,
+   "t": 131.927,
    "dur": 0.12
   },
   {
    "type": "ui_tick",
    "scene": "outro",
    "line": 0,
-   "t": 123.789,
+   "t": 132.377,
    "dur": 0.12
   },
   {
    "type": "ui_tick",
    "scene": "outro",
    "line": 0,
-   "t": 124.239,
+   "t": 132.827,
    "dur": 0.12
   },
   {
    "type": "chime",
    "scene": "outro",
    "line": 0,
-   "t": 124.939,
+   "t": 133.527,
    "dur": 2.4
   }
  ],
@@ -676,13 +732,13 @@
   "bgm": {
    "file": "build/mix_bgm.wav",
    "voiceToBedDb_1to5kHz_during_speech": 19.5,
-   "voiceToBedDb_broadband_during_speech": 14.08,
-   "bedEnergyBelow40HzFraction": 0.0216,
-   "integratedLUFS": -15.03,
+   "voiceToBedDb_broadband_during_speech": 13.44,
+   "bedEnergyBelow40HzFraction": 0.0165,
+   "integratedLUFS": -15.04,
    "truePeakDBTP": -1.5,
    "LRA": 1.8,
-   "samplePeak": 0.842,
-   "longestNearSilenceSec": 0.09,
+   "samplePeak": 0.8419,
+   "longestNearSilenceSec": 0.08,
    "checks": {
     "voiceToBed>=18": true,
     "LUFS within +-1 of -15": true,
@@ -696,9 +752,9 @@
   "nobgm": {
    "file": "build/mix_nobgm.wav",
    "voiceToBedDb_1to5kHz_during_speech": 19.5,
-   "voiceToBedDb_broadband_during_speech": 23.63,
-   "bedEnergyBelow40HzFraction": 0.0033,
-   "integratedLUFS": -15.01,
+   "voiceToBedDb_broadband_during_speech": 23.48,
+   "bedEnergyBelow40HzFraction": 0.0224,
+   "integratedLUFS": -15.0,
    "truePeakDBTP": -1.49,
    "LRA": 2.1,
    "samplePeak": 0.8419,

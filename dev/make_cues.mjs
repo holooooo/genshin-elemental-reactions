@@ -20,6 +20,7 @@ for (let k = 0; k < 7; k++) { const a = S('icd') + rel('icd', 2, 0.4) + k * 0.32
 SC.impl.lines.forEach(l => at('impl', l.start, 'ui_tick'));
 for (const [lt, el, r] of [[0.3, 'pyro'], [0.6, 'pyro'], [0.9, 'hydro'], [2.0, 'hydro', 'vaporize'], [3.0, 'electro', 'overloaded'], [4.2, 'electro', 'ec'], [6.0, 'pyro', 'vaporize'], [7.2, 'hydro'], [7.6, 'hydro', 'vaporize']]) hitAt('demo', lt, el, r);
 at('compare', S('compare') + 0.1, 'fire_loop', { dur: E('compare') - S('compare') - 0.3, gain: 0.5 });
+at('teaser', S('teaser') + 0.05, 'whoosh'); for (const o of [0.4, 2.7, 3.3, 5.0, 7.3]) at('teaser', S('teaser') + o, 'zap', { gain: 0.55 }); at('teaser', S('teaser') + 2.65, 'thunder', { gain: 0.45 });
 for (let n = 0; n < 3; n++) at('outro', L('outro', 0).start + 1.6 + n * 0.45, 'ui_tick');
 at('outro', L('outro', 0).start + 3.2, 'chime');
 writeFileSync('sfx_cues.json', JSON.stringify(cues, null, 1)); console.log(cues.length, 'cues');

@@ -1,5 +1,5 @@
 window.TIMELINE = {
- "duration": 131.939,
+ "duration": 140.526,
  "scenes": [
   {
    "id": "hook",
@@ -234,24 +234,47 @@ window.TIMELINE = {
    ]
   },
   {
+   "id": "teaser",
+   "kicker": "下期预告",
+   "title": "敌人在读你的按键？",
+   "start": 121.739,
+   "voiceEnd": 129.427,
+   "end": 130.327,
+   "lines": [
+    {
+     "zh": "下一期，我们换个问题：为什么有的敌人，好像比你先知道你要按什么键？",
+     "en": "Next time, a different question: why do some enemies seem to know which button you'll press before you do?",
+     "start": 121.739,
+     "end": 126.681,
+     "rehook": "钩子"
+    },
+    {
+     "zh": "从魂系列的读指令，讲到影之刃零。",
+     "en": "From input reading in the Souls games, all the way to Phantom Blade Zero.",
+     "start": 126.901,
+     "end": 129.427
+    }
+   ]
+  },
+  {
    "id": "outro",
    "kicker": "感谢观看",
    "title": "一键三连 + 关注",
-   "start": 121.739,
-   "voiceEnd": 128.939,
-   "end": 131.939,
+   "start": 130.327,
+   "voiceEnd": 137.526,
+   "end": 140.526,
    "lines": [
     {
      "zh": "如果这期对你有帮助，求一个一键三连，再点个关注。",
      "en": "If this helped, please like, coin and favourite, and hit follow.",
-     "start": 121.739,
-     "end": 125.48
+     "start": 130.327,
+     "end": 134.067
     },
     {
      "zh": "机制拆解下期见，我继续薅叔叔的羊毛做游戏！",
      "en": "See you next time on Mechanic Breakdown. I'll keep earning from Uncle Bilibili to build my game!",
-     "start": 125.7,
-     "end": 128.939
+     "start": 134.287,
+     "end": 137.526
     }
    ]
   }
@@ -576,28 +599,52 @@ window.TIMELINE = {
    "end": 120.839
   },
   {
+   "zh": "下一期，我们换个问题：",
+   "en": "Next time, a different question:",
+   "start": 121.739,
+   "end": 123.438
+  },
+  {
+   "zh": "为什么有的敌人",
+   "en": "why do some enemies seem to",
+   "start": 123.438,
+   "end": 124.519
+  },
+  {
+   "zh": "好像比你先知道你要按什么键？",
+   "en": "know which button you'll press before you do?",
+   "start": 124.519,
+   "end": 126.681
+  },
+  {
+   "zh": "从魂系列的读指令，讲到影之刃零",
+   "en": "From input reading in the Souls games, all the way to Phantom Blade Zero.",
+   "start": 126.901,
+   "end": 129.427
+  },
+  {
    "zh": "如果这期对你有帮助，求一个一键三连",
    "en": "If this helped, please like, coin and favourite,",
-   "start": 121.739,
-   "end": 124.63
+   "start": 130.327,
+   "end": 133.217
   },
   {
    "zh": "再点个关注",
    "en": "and hit follow.",
-   "start": 124.63,
-   "end": 125.48
+   "start": 133.217,
+   "end": 134.067
   },
   {
    "zh": "机制拆解下期见",
    "en": "See you next time on Mechanic Breakdown.",
-   "start": 125.7,
-   "end": 126.834
+   "start": 134.287,
+   "end": 135.421
   },
   {
    "zh": "我继续薅叔叔的羊毛做游戏！",
    "en": "I'll keep earning from Uncle Bilibili to build my game!",
-   "start": 126.834,
-   "end": 128.939
+   "start": 135.421,
+   "end": 137.526
   }
  ]
 };

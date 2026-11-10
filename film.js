@@ -116,6 +116,11 @@ const shots = {
     const tg = [-0.6, 0.4, 0];
     return { sim, simT: lt + 8, cb, cbT: lt, ids: ['a'], view: { cam: { pos: orbit(14.5, 0.95 + lt * 0.012, 7, tg), target: tg, fov: 32 }, sky: { a: 'day', b: 'dusk', k: ease(lt / 12) * 0.7 }, bloom: 0.7 } };
   },
+  teaser(t, lt) {
+    const sim = shotSim('calm', 'meadow', CALM);
+    const cb = shotCombat('teaser', ['a'], []);
+    return { sim, simT: lt + 130, cb, cbT: lt, ids: [], view: { cam: { pos: orbit(10, 2.0, 4, [0, 0.5, 0]), target: [0, 0.5, 0], fov: 34 }, sky: 'dusk' } };
+  },
   outro(t, lt) {
     const sim = shotSim('outro', 'meadow', [{ t: 0, type: 'wind', x: 0.6, z: 0.2 }, { t: 0.2, type: 'ignite', x: -3.4, z: -0.6, r: 0.5 }]);
     const cb = shotCombat('outro', ['a'], []);
@@ -259,6 +264,9 @@ function big(id, t) {
     const q = win(t, L('hook', 1).start + 2.2, FOOT_END, 0.3), b = win(t, L('hook', 2).start + 0.3, SC.hook.end, 0.4);
     if (q > 0) { k = q; html = '<div class="l1">这个<span class="acc">翻倍</span>，怎么算的？</div><div class="l2">HOW IS THE DOUBLE CALCULATED?</div>'; }
     if (b > 0) { k = b; html = '<div class="l1">同一把火，<span class="acc">两种算法</span></div><div class="l2">机制拆解 02 · 原神元素反应</div>'; }
+  } else if (id === 'teaser') {
+    const a = win(t, L('teaser', 0).start + 0.4, SC.teaser.end - 0.2, 0.4);
+    if (a > 0) { k = a; html = t < L('teaser', 1).start ? '<div class="l1">敌人在<span class="acc">读你的按键</span>？</div><div class="l2">下期预告 · 机制拆解 03</div>' : '<div class="l1">读指令<span class="acc">简史</span></div><div class="l2">魂系列 → 影之刃零</div>'; }
   } else if (id === 'icd') {
     const a = win(t, L('icd', 0).start + 0.1, L('icd', 0).end + 0.3, 0.3);
     if (a > 0) { k = a; html = '<div class="l1">隐藏规则：<span class="acc">元素附着冷却</span></div>'; }
@@ -302,9 +310,11 @@ window.renderFrame = async function (t) {
   op($('inspector'), 0); op($('legend'), 0); setHTML($('anno'), '');
   // gameplay footage
   const waits = [];
-  const fk = id === 'hook' ? 1 - ramp(t, FOOT_END - 0.25, 0.4) : 0;
+  const isT = id === 'teaser';
+  const fk = id === 'hook' ? 1 - ramp(t, FOOT_END - 0.25, 0.4) : isT ? ramp(lt, 0, 0.3) * clamp(toNext / 0.3) : 0;
   op($('foot'), fk); op($('footlabel'), fk);
-  if (fk > 0) { const n = clamp(Math.floor(t * 30) + 1, 1, FOOT_N); waits.push(setImg($('foot'), `footage/frames/f${String(n).padStart(4, '0')}.jpg`)); $('footlabel').textContent = '实机画面 · 原神（© HoYoverse）'; }
+  if (fk > 0 && !isT) { const n = clamp(Math.floor(t * 30) + 1, 1, FOOT_N); waits.push(setImg($('foot'), `footage/frames/f${String(n).padStart(4, '0')}.jpg`)); $('footlabel').textContent = '实机画面 · 原神（© HoYoverse）'; }
+  if (fk > 0 && isT) { const n = clamp(Math.floor(lt * 30) + 1, 1, 270); waits.push(setImg($('foot'), `footage/pb0_frames/f${String(n).padStart(4, '0')}.jpg`)); $('footlabel').textContent = '实机画面 · 影之刃零（© S-GAME）'; }
   await Promise.all(waits.filter(Boolean));
   big(id, t);
   const sub = TL.subs.find(c => t >= c.start && t < c.end + 0.12);
